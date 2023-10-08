@@ -34,10 +34,18 @@
     }
 
     if(!isset($_GET["email"]) || empty($_GET["email"])) {
-        die("Invalid email address");
+        die("Invalid email");
     }
 
-    if(!isset($_GET["product_info"]) || empty($_GET["product_info"])) {
+    if(!isset($_GET["phone"]) || empty($_GET["phone"])) {
+        die("Invalid phone");
+    }
+
+    if(!isset($_GET["firstname"]) || empty($_GET["firstname"])) {
+        die("Invalid firstname");
+    }
+
+    if(!isset($_GET["productinfo"]) || empty($_GET["productinfo"])) {
         die("Invalid product_info");
     }
 
@@ -50,14 +58,18 @@
     $lastname = $_GET['lastname'];
     $phone = $_GET['phone'];
     $country = $_GET['country'];
-    $panNumber = $_GET['udf1'];
-    $address = $_GET['address'];
-    $udf1 = $panNumber;
-    $udf2 = $panNumber;
+    $city = $_GET['city'];
+    $state = $_GET['state'];
+    $zipcode = $_GET['zipcode'];
+    $address1 = $_GET['address1'];
+    $address2 = $_GET['address2'];
+    $udf1 = $_GET['udf1'];
+    $udf1 = $udf1;
+    $udf2 = '';
     $udf3 = '';
-    $udf4 = $address;
+    $udf4 = '';
     $udf5 = '';
-    $product_info = $product_info . ". PanNumber - " . $panNumber;
+    $product_info = $product_info . ". PanNumber - " . $udf1;
     
     $sha_key = "$merchant_key|$txnid|$amount|$product_info|$firstname|$email||$udf2||$udf4|||||||$salt";
 
@@ -84,8 +96,16 @@ form {
         <input type="hidden" name="furl" value="<?php echo $furl; ?>" />
         <input type="hidden" name="phone" value="<?php echo $phone; ?>" />
         <input type="hidden" name="country" value="<?php echo $country; ?>" />
+        <input type="hidden" name="city" value="<?php echo $city; ?>" />
+        <input type="hidden" name="state" value="<?php echo $state; ?>" />
+        <input type="hidden" name="zipcode" value="<?php echo $zipcode; ?>" />
+        <input type="hidden" name="address1" value="<?php echo $address1; ?>" />
+        <input type="hidden" name="address2" value="<?php echo $address2; ?>" />
+        <input type="hidden" name="udf1" value="<?php echo $udf1; ?>"/>
         <input type="hidden" name="udf2" value="<?php echo $udf2; ?>"/>
+        <input type="hidden" name="udf3" value="<?php echo $udf3; ?>"/>
         <input type="hidden" name="udf4" value="<?php echo $udf4; ?>"/>
+        <input type="hidden" name="udf5" value="<?php echo $udf5; ?>"/>
         <input type="hidden" name="hash" value="<?php echo $hash; ?>" />
         <input type="hidden" name="service_provider" value="<?php echo $service_provider; ?>" />
         <input type="submit" value="submit"> 
