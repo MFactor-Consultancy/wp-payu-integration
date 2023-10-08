@@ -23,3 +23,5 @@
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
+payu-gateway/environments.json
+.DS_Store

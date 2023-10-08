@@ -1,0 +1,7 @@
+{
+    "mf": {
+        "key": "KEY",
+        "salt": "SALT",
+        "url": "API_URL"
+    }
+}
