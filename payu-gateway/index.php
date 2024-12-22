@@ -51,7 +51,7 @@
 
     $surl = $_GET["surl"];
     $furl = $_GET["furl"];
-    $product_info = $_GET['product_info'];
+    $product_info = $_GET['productinfo'];
     $amount = $_GET['amount'];
     $email = $_GET['email'];
     $firstname = $_GET['firstname'];
